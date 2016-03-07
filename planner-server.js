@@ -21,9 +21,9 @@ var plannerSchema =  new mongoose.Schema ({
 var Plan = mongoose.model('Plan', plannerSchema);
 
 app.get('/plans', function (req, res) {
-    Plan.find(function (err, todos) {
+    Plan.find(function (err, plans) {
         if (err) res.send(err);
-        else res.json(todos);
+        else res.json(plans);
     });
 });
 
@@ -37,7 +37,7 @@ app.post('/plan', function (req, res) {
 
 });
 
-app.delete('/todo/:id', function (req, res) {
+app.delete('/plan/:id', function (req, res) {
     Plan.remove({
         _id: req.params.id
     }, function (err, todo) {

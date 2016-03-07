@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <title>Planner</title>
-    <script src="jquery-2.1.4.js"></script>
     <script src="angular.js"></script>
     <script src='planner.js'></script>
     <link rel="stylesheet" href="css/style.css">
@@ -27,19 +26,28 @@
                         <label class="activities">activity</label>
                         <input type="text" ng-model="plan.task" placeholder="activity" required="required"/>
                         <label class="activities">minutes</label>
-                        <input type="number" placeholder="0" min="1" max="1000"/>
-                    </div>
-                    <div class="btn">
+                        <input type="number" placeholder="0" min="1" max="500"/>
                         <button class= "btnadd" type="submit" ng-click="save()" ng-model-instant>
-                            <a>Add</a>
+                            <a>+</a>
                         </button>
-                     </div>
+                    </div>
                </form>
             </div>
         </div>
-        <div id="timeline">
+        <div id="result">
             <h3>Timeline</h3>
-            test
+            <div id="starttime">8:00</div>
+            <div id="endtime">9:15</div>
+            <div id="timeline">
+                <div class="item">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nulla a ante porta aliquet. Duis consequat tincidunt quam, id gravida metus tempus in.
+                </div>
+                <div class="item">
+                    Nunc et maximus felis, sed accumsan turpis. Ut eget egestas leo. Proin iaculis massa diam, non aliquet neque suscipit quis.
+                    Donec eu nibh eu odio dictum faucibus.
+                    In tincidunt nisi ligula, a finibus diam pulvinar eu. Phasellus feugiat venenatis luctus. Donec fringilla fermentum diam sit amet sodales.
+                </div>
+            </div>
         </div>
     </div>
 </body>

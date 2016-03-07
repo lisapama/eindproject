@@ -32,15 +32,16 @@ h3{
 
 button{
     display: inline-block;
-    color: white;
     text-align: center;
     text-decoration: none;
     border: none;
-    padding: 0.6em;
 }
 
 .btnadd{
-    background-color: limegreen;
+    background-color: transparent;
+    font-size: 1.5em;
+    color: darkslategrey;
+
 }
 
 .table {
@@ -63,7 +64,23 @@ ul {
 
 /*timeline*/
 
-#timeline{
+#result{
     margin: 4em 0em;
 
 }
+
+#timeline{
+    border-bottom: 0.2em solid #ddd;
+    margin: 2em 0em;
+    width: 80%;
+}
+
+.item{
+    margin: 1em;
+    padding: 1em;
+    background-color: #ddd;
+    max-width: 15em;
+    display: inline-block;
+
+}
+
