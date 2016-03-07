@@ -1,11 +1,30 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app ="planner" lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Planner</title>
+    <script src="jquery-2.1.4.js"></script>
+    <script src="angular.js"></script>
+    <script src='planner.js'></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 </head>
 <body>
-
+    <div ng-controller="PlannerCntrl">
+        <form class="form-horizontal" ng-submit="updatePlanner">
+            <div class="control-group">
+                <label class="control-label" for="fn">Activities</label>
+                <div class="controls">
+                    <input class="input-xlarge" id="fn" type="text" ng-model="plan.task"
+                           placeholder="activity" required="required"/>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary" ng-click="save()" ng-model-instant>
+                    <a class="icon-plus"></a> Add
+                </button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
