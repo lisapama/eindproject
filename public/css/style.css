@@ -1,0 +1,47 @@
+body{
+    background: steelblue;
+}
+
+#container{
+    margin: 3em;
+    background: white;
+    border-radius: 1em;
+    padding: 1em 2em;
+}
+
+#activities{
+
+}
+
+.input{
+    margin: 1em 0em;
+}
+
+button{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    padding: 0.6em;
+}
+
+.btnadd{
+    background-color: limegreen;
+}
+
+.table{
+
+}
+
+label.activities{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.8em;
+}
+
+h1{}
+
+h3{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+}
