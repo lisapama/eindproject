@@ -12,33 +12,34 @@
 <body>
     <div id="container">
         <div ng-controller="PlannerCntrl">
-            <form ng-submit="updatePlanner">
-                <div id="activities">
+           <div id="activities">
                     <h3>Activities</h3>
+                    <table class="table">
+                        <tr ng-repeat="plan in plans">
+                            <td>{{plan.task}}</td>
+                            <td>
+                                <button class="btndel" ng-click="delete(plan._id)">delete</button>
+                            </td>
+                        </tr>
+                    </table>
+               <form ng-submit="updatePlanner">
                     <div class="input">
                         <label class="activities">activity</label>
                         <input type="text" ng-model="plan.task" placeholder="activity" required="required"/>
                         <label class="activities">minutes</label>
-                        <input type="number" min="1" max="1000"/>
+                        <input type="number" placeholder="0" min="1" max="1000"/>
                     </div>
-                </div>
-                <div class="btn">
-                    <button class= "btnadd" type="submit" ng-click="save()" ng-model-instant>
-                        <a>Add</a>
-                    </button>
-                </div>
-            </form>
-            <table class="table">
-                <tr ng-repeat="plan in plans">
-                    <td>{{plan.task}}</td>
-                    <td>
-                        <button class="btndel" ng-click="delete(plan._id)">delete</button>
-                    </td>
-                </tr>
-            </table>
+                    <div class="btn">
+                        <button class= "btnadd" type="submit" ng-click="save()" ng-model-instant>
+                            <a>Add</a>
+                        </button>
+                     </div>
+               </form>
+            </div>
         </div>
         <div id="timeline">
-
+            <h3>Timeline</h3>
+            test
         </div>
     </div>
 </body>

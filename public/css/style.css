@@ -1,5 +1,7 @@
 body{
     background: steelblue;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
 }
 
 #container{
@@ -8,6 +10,17 @@ body{
     border-radius: 1em;
     padding: 1em 2em;
 }
+
+h1{
+
+}
+
+h3{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+}
+
+/*activities*/
 
 #activities{
 
@@ -30,8 +43,12 @@ button{
     background-color: limegreen;
 }
 
-.table{
+.table {
+    border: 1px solid #ddd;
+}
 
+th, td {
+    border-bottom: 1px solid #ddd;
 }
 
 label.activities{
@@ -39,9 +56,14 @@ label.activities{
     font-size: 0.8em;
 }
 
-h1{}
+ul {
+    padding: 0;
+    list-style-type: none;
+}
 
-h3{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1em;
+/*timeline*/
+
+#timeline{
+    margin: 4em 0em;
+
 }
