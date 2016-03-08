@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app='plan'>
+<head>
+    <script src="jquery-2.1.4.js"></script>
+    <script src="angular.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src='planning.js'></script>
+</head>
+<body>
+<div id="container">
+    <div ng-controller="PlanCtrl">
+      <form ng-submit="updatePlan">
+        <div class="input">
+          <label>activities</label>
+            <div>
+              <input type="text" ng-model="plan.task"
+                     placeholder="activity" required="required"/>
+              <button type="submit" class="btnadd" ng-click="save()" ng-model-instant>
+                  <a></a> +
+              </button>
+            </div>
+        </div>
+      </form>
+      <table class="table">
+          <tr ng-repeat="plan in plans">
+              <td>{{plan.task}}</td><td><button class="btn" ng-click="delete(plan._id)">delete</button></td>
+          </tr>
+      </table>
+    </div>
+    <div id="result">
+        <h3>Timeline</h3>
+        <div id="starttime">8:00</div>
+        <div id="endtime">9:15</div>
+        <div id="timeline">
+            <div class="item">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nulla a ante porta aliquet. Duis consequat tincidunt quam, id gravida metus tempus in.
+            </div>
+            <div class="item">
+                Nunc et maximus felis, sed accumsan turpis. Ut eget egestas leo. Proin iaculis massa diam, non aliquet neque suscipit quis.
+                Donec eu nibh eu odio dictum faucibus.
+                In tincidunt nisi ligula, a finibus diam pulvinar eu. Phasellus feugiat venenatis luctus. Donec fringilla fermentum diam sit amet sodales.
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

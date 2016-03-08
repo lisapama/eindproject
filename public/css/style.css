@@ -27,7 +27,7 @@ h3{
 }
 
 .input{
-    margin: 1em 0em;
+    margin: 1em 0;
 }
 
 button{
@@ -52,7 +52,7 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 
-label.activities{
+label.event{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 0.8em;
 }
@@ -65,13 +65,13 @@ ul {
 /*timeline*/
 
 #result{
-    margin: 4em 0em;
+    margin: 4em 0;
 
 }
 
 #timeline{
     border-bottom: 0.2em solid #ddd;
-    margin: 2em 0em;
+    margin: 2em 0;
     width: 80%;
 }
 
