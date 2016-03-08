@@ -35,21 +35,25 @@ button{
     text-align: center;
     text-decoration: none;
     border: none;
+    background-color: transparent;
+    font-size: 1.5em;
 }
 
 .btnadd{
-    background-color: transparent;
-    font-size: 1.5em;
     color: darkslategrey;
+}
 
+.btndel{
+    color: red;
 }
 
 .table {
-    border: 1px solid #ddd;
+    border: 0px solid #ddd;
 }
 
 th, td {
     border-bottom: 1px solid #ddd;
+    padding: 0.5em;
 }
 
 label.event{

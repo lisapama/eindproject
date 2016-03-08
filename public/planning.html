@@ -11,20 +11,25 @@
     <div ng-controller="PlanCtrl">
       <form ng-submit="updatePlan">
         <div class="input">
-          <label>activities</label>
             <div>
-              <input type="text" ng-model="plan.task"
-                     placeholder="activity" required="required"/>
+              <input type="text" ng-model="plan.task" placeholder="activity" required="required"/>
+              <!-- add ng-model plan.time -->
+              <input type="number" placeholder="0" min="1" max="500"/>
               <button type="submit" class="btnadd" ng-click="save()" ng-model-instant>
                   <a></a> +
               </button>
             </div>
         </div>
       </form>
+      <h3>Activities</h3>
       <table class="table">
           <tr ng-repeat="plan in plans">
-              <td>{{plan.task}}</td><td><button class="btn" ng-click="delete(plan._id)">delete</button></td>
+              <td>{{plan.task}}</td><td><button class="btndel" ng-click="delete(plan._id)">-</button></td>
           </tr>
+          <!-- add ng repeat for time
+          <tr>
+              <td>{{plan.time}}</td>
+          </tr>-->
       </table>
     </div>
     <div id="result">
