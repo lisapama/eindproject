@@ -14,7 +14,8 @@ app.listen(3000, function () {
 });
 
 var planSchema =  new mongoose.Schema ({
-  task: { type: String,  default: '' }
+  task: { type: String,  default: '' },
+  task2: { type: Number, default: '' }
 });
 
 var Plan = mongoose.model('Plan', planSchema);
@@ -27,7 +28,7 @@ var Plan = mongoose.model('Plan', planSchema);
   });
 
   app.post('/plan', function (req, res) {
-    var newPlan = new Plan({task: req.body.task})
+    var newPlan = new Plan({task: req.body.task + " " + req.body.task2})
 
     newPlan.save(function (err) {
       if (err)res.send(err);

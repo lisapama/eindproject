@@ -12,6 +12,7 @@ angular.module('plan', []).controller("PlanCtrl", function($scope, $http) {
       });
   };
 
+
   $scope.load();
 
   $scope.save = function ()  {
