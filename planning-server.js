@@ -29,12 +29,10 @@ var Plan = mongoose.model('Plan', planSchema);
 
   app.post('/plan', function (req, res) {
     var newPlan = new Plan({task: req.body.task + " " + req.body.task2})
-
     newPlan.save(function (err) {
       if (err)res.send(err);
       res.status(200).end();
     });
-
   });
 
   app.delete('/plan/:id', function (req, res) {
