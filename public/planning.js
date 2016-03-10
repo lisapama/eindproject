@@ -26,5 +26,14 @@ angular.module('plan', []).controller("PlanCtrl", function($scope, $http) {
     	$scope.load();
     });
   };
+
+  $scope.minutesTotal = function () {
+    var total = 0;
+    for(var i = 0; i < $scope.plans.length; i++){
+      var plan = $scope.plans[i];
+      total += (parseInt(plan.task, 10));
+    }
+    return total;
+  };
 });
 

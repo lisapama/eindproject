@@ -12,29 +12,35 @@
       <form ng-submit="updatePlan">
         <div class="input">
             <div>
-              <input type="text" ng-model="plan.task" placeholder="activity" required="required" autofocus/>
-              <input type="number" ng-model="plan.minutes" placeholder="0" min="1" max="500"/>
-              <button type="submit" class="btnadd" ng-click="save()" ng-model-instant>
-                  <a></a> +
-              </button>
+                <input type="number" ng-model="plan.minutes" placeholder="0" min="1" max="500"/>
+                <input type="text" ng-model="plan.task" placeholder="activity" required="required" autofocus/>
+                <button type="submit" class="btnadd" ng-click="save()" ng-model-instant>
+                    <a></a> +
+                </button>
             </div>
         </div>
       </form>
       <h3>Activities</h3>
-      <table class="table">
-          <!--add functuional checkboxes-->
-          <tr ng-repeat="plan in plans">
-              <td><input type="checkbox"/></td>
-              <td>{{plan.task}}</td>
-              <td>
-                  <button class="btndel" ng-click="delete(plan._id)">-</button>
-              </td>
-          </tr>
-      </table>
+        <form>
+          <table class="table">
+              <!--add functuional checkboxes with if-->
+              <tr ng-repeat="plan in plans">
+                  <td><input type="checkbox"/></td>
+                  <td>{{plan.task}}</td>
+                  <td>
+                      <button class="btndel" ng-click="delete(plan._id)">-</button>
+                  </td>
+              </tr>
+          </table>
+        </form>
+        <div>
+            <button class="btnstd">Calculate</button>
+            Total time: {{minutesTotal()}} minutes
+        </div>
     </div>
     <div id="result">
         <h3>Timeline</h3>
-        <!--add numbers from task2 -->
+        <!--calculate with numbers from minutesTotal -->
         <div id="starttime">8:00</div>
         <div id="endtime">9:15</div>
         <div id="timeline">

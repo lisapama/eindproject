@@ -10,15 +10,22 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.listen(3000, function () {
-  console.log('planning app on port 3000');
+  console.log('port 3000: Planning app');
 });
 
+/*
 var planSchema =  new mongoose.Schema ({
-  task: { type: String,  default: '' },
-  minutes: { type: Number, default: '' }
+  task: { type: Number, default: '' }
 });
+*/
+
+ var planSchema =  new mongoose.Schema ({
+   minutes: { type: Number, default:''},
+   task: { type: String, default:''}
+ });
 
 var Plan = mongoose.model('Plan', planSchema);
+
 
   app.get('/plans', function (req, res) {
     Plan.find(function (err, plans) {
@@ -28,7 +35,7 @@ var Plan = mongoose.model('Plan', planSchema);
   });
 
   app.post('/plan', function (req, res) {
-    var newPlan = new Plan({task: req.body.task + " " + req.body.minutes})
+    var newPlan = new Plan({task: req.body.minutes + " minutes | " + req.body.task})
     newPlan.save(function (err) {
       if (err)res.send(err);
       res.status(200).end();
