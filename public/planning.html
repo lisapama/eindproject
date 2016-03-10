@@ -34,15 +34,18 @@
           </table>
         </form>
         <div>
-            <button class="btnstd">Calculate</button>
             Total time: {{minutesTotal()}} minutes
         </div>
+        <form>
+            Time to leave: <input ng-bind="timeToLeave" type="text" id="endtime" placeholder="00:00"/>
+            <button class="btnstd">Calculate</button>
+        </form>
     </div>
     <div id="result">
         <h3>Timeline</h3>
         <!--calculate with numbers from minutesTotal -->
-        <div id="starttime">8:00</div>
-        <div id="endtime">9:15</div>
+        <div>test</div>
+        <div>test</div>
         <div id="timeline">
             <div class="item">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nulla a ante porta aliquet. Duis consequat tincidunt quam, id gravida metus tempus in.

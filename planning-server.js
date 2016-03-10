@@ -6,18 +6,11 @@ var bodyParser = require('body-parser');
 mongoose.connect('mongodb://localhost/plan');
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
-
 app.use(express.static('public'));
 
 app.listen(3000, function () {
   console.log('port 3000: Planning app');
 });
-
-/*
-var planSchema =  new mongoose.Schema ({
-  task: { type: Number, default: '' }
-});
-*/
 
  var planSchema =  new mongoose.Schema ({
    minutes: { type: Number, default:''},
