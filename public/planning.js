@@ -4,10 +4,10 @@ planner.controller("PlanCtrl", function($scope, $http) {
 
   $scope.load = function ()  {
     $http.get('/plans').
-      success(function(data, status, headers, config) {
+      success(function(data) {
         $scope.plans = data;
       }).
-      error(function(data, status, headers, config) {
+      error(function(data, status) {
       console.log(status);
       console.log(data);
       });
@@ -36,25 +36,19 @@ planner.controller("PlanCtrl", function($scope, $http) {
     return total;
   };
 
-  function calcStartTime ($scope) {
-
-    $scope.hourMinutes = function () {
+   function StartTimeCtrl ($scope) {
+    $scope.startTime = function () {
       var timeToLeave = $scope.timeToLeave;
       var hoursArray = timeToLeave.split(":");
-      var minutesEnd = parseInt(hoursArray[0])*60 + parseInt(hoursArray[1]);
+      var minutesEnd = parseInt(hoursArray[0]) * 60 + parseInt(hoursArray[1]);
       var newMinutes = minutesEnd - $scope.minutesTotal();
-      return newMinutes;
-    };
-
-    $scope.startTime = function () {
-      var newTime = $scope.hourMinutes();
-      var minutes = newTime%60;
+      var minutes = newMinutes % 60;
       var hours = (newTime - minutes);
-
-      return hours + ":" + minutes;
-    };
+      if (minutes > 0 && hours > 0) {
+        return hours + ":" + minutes;
+      }
+    }
   }
-
 });
 
   /*$scope.calcStartTime = function () {

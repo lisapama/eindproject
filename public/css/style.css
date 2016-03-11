@@ -80,7 +80,20 @@ ul {
 #timeline{
     border-bottom: 0.2em solid #ddd;
     margin: 2em 0;
-    width: 80%;
+    width: auto;
+}
+
+.time {
+    border-radius: 3em;
+    background-color: #f5ae20;
+    width: 2em;
+    height: 2em;
+    padding: 2em;
+    float: left;
+}
+
+#leave {
+    float: right;
 }
 
 .item{

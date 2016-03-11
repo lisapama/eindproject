@@ -35,17 +35,18 @@
         </form>
         <div>
             Total time: {{minutesTotal()}} minutes
+            <form ng-controller="StartTimeCtrl">
+                Time to leave: <input ng-model="timeToLeave" type="text" id="endtime" placeholder="00:00"/>
+                Start time: {{startTime()}}
+            </form>
         </div>
     </div>
     <div id="result">
-        <form ng-controller="calcStartTime">
-            Time to leave: <input ng-model="timeToLeave" type="text" id="endtime" placeholder="00:00"/>
-            Start time: {{startTime()}}
-        </form>
+
         <h3>Timeline</h3>
         <!--calculate with numbers from minutesTotal -->
-        <div>test</div>
-        <div>test</div>
+        <div class="time">8:15</div>
+        <div class="time" id="leave">9:00</div>
         <div id="timeline">
             <div class="item">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nulla a ante porta aliquet. Duis consequat tincidunt quam, id gravida metus tempus in.
