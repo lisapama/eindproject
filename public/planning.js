@@ -15,7 +15,7 @@ planner.controller("PlanCtrl", function($scope, $http) {
 
   $scope.load();
 
-  $scope.save = function ()  {
+  $scope.save = function () {
     $http.post('/plan', angular.toJson($scope.plan)).success(function () {
     	$scope.load();
     });
@@ -35,6 +35,36 @@ planner.controller("PlanCtrl", function($scope, $http) {
     }
     return total;
   };
+
+  function calcStartTime ($scope) {
+
+    $scope.hourMinutes = function () {
+      var timeToLeave = $scope.timeToLeave;
+      var hoursArray = timeToLeave.split(":");
+      var minutesEnd = parseInt(hoursArray[0])*60 + parseInt(hoursArray[1]);
+      var newMinutes = minutesEnd - $scope.minutesTotal();
+      return newMinutes;
+    };
+
+    $scope.startTime = function () {
+      var newTime = $scope.hourMinutes();
+      var minutes = newTime%60;
+      var hours = (newTime - minutes);
+
+      return hours + ":" + minutes;
+    };
+  }
+
+});
+
+  /*$scope.calcStartTime = function () {
+    var hours = $scope.timeToLeave;
+    var hoursArray = hours.split(":");
+    var minutes = parseInt(hoursArray[0])*60 + parseInt(hoursArray[1]);
+    newTime = minutes - $scope.minutesTotal;
+    return newTime;
+  };
+*/
 /*
   $scope.startTime = function () {
     var ttl = $scope.timeToLeave;
@@ -45,4 +75,3 @@ planner.controller("PlanCtrl", function($scope, $http) {
  */
 
   /*minTot = $scope.minutesTotal();*/
-});
