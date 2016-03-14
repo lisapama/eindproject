@@ -46,10 +46,11 @@ planner.controller("CalcCtrl", function ($scope) {
     }
 
     function minutesToTime (minutes) {
-        var mins = minutes%60;
-        var hours = (minutes - mins)/60;
-        return hours + ":" + mins;
+        var displayMinutes = minutes%60;
+        var displayHours = (minutes - displayMinutes)/60;
+        return displayHours + ":" + displayMinutes;
     }
+    /*99 added to displayHours, remove*/
 
     $scope.startTime = function () {
         var taskMinutes = $scope.minutesTotal();
