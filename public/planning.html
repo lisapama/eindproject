@@ -33,16 +33,16 @@
               </tr>
           </table>
         </form>
-        <div>
+        <div ng-controller="CalcCtrl">
             Total time: {{minutesTotal()}} minutes
-            <form ng-controller="StartTimeCtrl">
-                Time to leave: <input ng-model="timeToLeave" type="text" id="endtime" placeholder="00:00"/>
-                Start time: {{startTime()}}
+            <form ng-submit="startTime()">
+                <input ng-model="timeToLeave" name="timeToLeave" id="endtime" placeholder="00:00"/>
+                <button type=submit class="btnstd">calc</button>
+                Start time: {{realStartTime}}
             </form>
         </div>
     </div>
     <div id="result">
-
         <h3>Timeline</h3>
         <!--calculate with numbers from minutesTotal -->
         <div class="time">8:15</div>
