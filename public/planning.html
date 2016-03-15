@@ -42,14 +42,9 @@
             <h3>Timeline</h3>
             <div class="time">{{realStartTime}}</div>
             <div class="time" id="leave">{{timeToLeave}}</div>
-            <div id="timeline">
+            <div id="timeline" ng-repeat="plan in plans">
                 <div class="item">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nulla a ante porta aliquet. Duis consequat tincidunt quam, id gravida metus tempus in.
-                </div>
-                <div class="item">
-                    Nunc et maximus felis, sed accumsan turpis. Ut eget egestas leo. Proin iaculis massa diam, non aliquet neque suscipit quis.
-                    Donec eu nibh eu odio dictum faucibus.
-                    In tincidunt nisi ligula, a finibus diam pulvinar eu. Phasellus feugiat venenatis luctus. Donec fringilla fermentum diam sit amet sodales.
+                   {{plan.task}}
                 </div>
             </div>
         </div>

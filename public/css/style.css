@@ -1,5 +1,5 @@
 body{
-    background: steelblue;
+    background: #638270;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em;
 }
@@ -45,7 +45,7 @@ button{
 }
 
 .btnstd{
-    background-color: coral;
+    background-color: #0c2538;
     font-size: 1em;
     color: white;
     margin: 0.5em;
@@ -77,7 +77,6 @@ ul {
 }
 
 #timeline{
-    border-bottom: 0.2em solid #ddd;
     margin: 2em 0;
     width: auto;
 }
@@ -96,7 +95,7 @@ ul {
 }
 
 .item{
-    margin: 1em;
+    margin: 0.5em;
     padding: 1em;
     background-color: #ddd;
     max-width: 15em;

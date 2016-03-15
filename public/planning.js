@@ -48,10 +48,16 @@ planner.controller("CalcCtrl", function ($scope) {
     function minutesToTime (minutes) {
         var displayMinutes = minutes%60;
         var displayHours99 = (minutes - displayMinutes)/60;
-        var displayHoursString = new String(displayHours99)
+        var displayHoursString = String(displayHours99);
         var displayHours = displayHoursString.substr(0,2);
         displayHours = parseInt(displayHours);
-        return displayHours + ":" + displayMinutes;
+
+        if (displayMinutes < 10) {
+            return displayHours + ":0" + displayMinutes;
+        }
+        else {
+            return displayHours + ":" + displayMinutes;
+        }
     }
 
     $scope.startTime = function () {
