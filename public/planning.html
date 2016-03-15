@@ -3,27 +3,24 @@
 <head>
     <script src="jquery-2.1.4.js"></script>
     <script src="angular.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="angular-animate.min.js"></script>
     <script src='planning.js'></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div id="container">
-    <div ng-controller="PlanCtrl">
+<div id="container" ng-controller="PlanCtrl">
+    <div id="tasklist">
       <form ng-submit="updatePlan">
         <div class="input">
-            <div>
-                <input type="number" ng-model="plan.minutes" placeholder="0" min="1" max="500"/>
-                <input type="text" ng-model="plan.task" placeholder="activity" required="required" autofocus/>
-                <button type="submit" class="btnadd" ng-click="save()">
-                    <a></a> +
-                </button>
-            </div>
+            <input type="number" ng-model="plan.minutes" placeholder="0" min="1" max="500"/>
+            <input type="text" ng-model="plan.task" placeholder="activity" required="required" autofocus/>
+            <button type="submit" class="btnadd" ng-click="save()"><a></a> + </button>
         </div>
       </form>
       <h3>Activities</h3>
         <form>
           <table class="table">
-              <!--add functuional checkboxes with if-->
+              <!--add functional checkboxes with if-->
               <tr ng-repeat="plan in plans">
                   <td><input type="checkbox"/></td>
                   <td>{{plan.task}}</td>
@@ -33,28 +30,27 @@
               </tr>
           </table>
         </form>
-        <div ng-controller="CalcCtrl">
-            Total time: {{minutesTotal()}} minutes
-            <form ng-submit="startTime()">
-                <input ng-model="timeToLeave" name="timeToLeave" id="endtime" placeholder="00:00"/>
-                <button type=submit class="btnstd">calc</button>
-                Start time: {{realStartTime}}
-            </form>
-        </div>
     </div>
-    <div id="result">
-        <h3>Timeline</h3>
-        <!--calculate with numbers from minutesTotal -->
-        <div class="time">8:15</div>
-        <div class="time" id="leave">9:00</div>
-        <div id="timeline">
-            <div class="item">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nulla a ante porta aliquet. Duis consequat tincidunt quam, id gravida metus tempus in.
-            </div>
-            <div class="item">
-                Nunc et maximus felis, sed accumsan turpis. Ut eget egestas leo. Proin iaculis massa diam, non aliquet neque suscipit quis.
-                Donec eu nibh eu odio dictum faucibus.
-                In tincidunt nisi ligula, a finibus diam pulvinar eu. Phasellus feugiat venenatis luctus. Donec fringilla fermentum diam sit amet sodales.
+    <div ng-controller="CalcCtrl">
+        Total time: {{minutesTotal()}} minutes
+        <form ng-submit="startTime()">
+            <input ng-model="timeToLeave" name="timeToLeave" id="endtime" placeholder="00:00" autocomplete="off"/>
+            <input type=submit class="btnstd" value="calc"/>
+            Start time: {{realStartTime}}
+        </form>
+        <div class="result">
+            <h3>Timeline</h3>
+            <div class="time">{{realStartTime}}</div>
+            <div class="time" id="leave">{{timeToLeave}}</div>
+            <div id="timeline">
+                <div class="item">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget nulla a ante porta aliquet. Duis consequat tincidunt quam, id gravida metus tempus in.
+                </div>
+                <div class="item">
+                    Nunc et maximus felis, sed accumsan turpis. Ut eget egestas leo. Proin iaculis massa diam, non aliquet neque suscipit quis.
+                    Donec eu nibh eu odio dictum faucibus.
+                    In tincidunt nisi ligula, a finibus diam pulvinar eu. Phasellus feugiat venenatis luctus. Donec fringilla fermentum diam sit amet sodales.
+                </div>
             </div>
         </div>
     </div>

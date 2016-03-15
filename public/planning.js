@@ -1,4 +1,4 @@
-var planner = angular.module('plan', []);
+var planner = angular.module('plan', ['ngAnimate']);
 
 planner.controller("PlanCtrl", function($scope, $http) {
 
@@ -47,10 +47,12 @@ planner.controller("CalcCtrl", function ($scope) {
 
     function minutesToTime (minutes) {
         var displayMinutes = minutes%60;
-        var displayHours = (minutes - displayMinutes)/60;
+        var displayHours99 = (minutes - displayMinutes)/60;
+        var displayHoursString = new String(displayHours99)
+        var displayHours = displayHoursString.substr(0,2);
+        displayHours = parseInt(displayHours);
         return displayHours + ":" + displayMinutes;
     }
-    /*99 added to displayHours, remove*/
 
     $scope.startTime = function () {
         var taskMinutes = $scope.minutesTotal();
@@ -59,38 +61,3 @@ planner.controller("CalcCtrl", function ($scope) {
         $scope.realStartTime = minutesToTime(startTimeMinutes);
     }
 });
-
-
-   /* $scope.startTime = function () {
-      $scope.timeToLeave
-      var hoursArray = timeToLeave.split(":");
-      var minutesEnd = parseInt(hoursArray[0]) * 60 + parseInt(hoursArray[1]);
-
-      var newMinutes = minutesEnd - $scope.minutesTotal();
-      var minutes = newMinutes % 60;
-      var hours = (newTime - minutes);
-
-      if (minutes > 0 && hours > 0) {
-          return hours + ":" + minutes;
-    }
-  }
-});*/
-
-  /*$scope.calcStartTime = function () {
-    var hours = $scope.timeToLeave;
-    var hoursArray = hours.split(":");
-    var minutes = parseInt(hoursArray[0])*60 + parseInt(hoursArray[1]);
-    newTime = minutes - $scope.minutesTotal;
-    return newTime;
-  };
-*/
-/*
-  $scope.startTime = function () {
-    var ttl = $scope.timeToLeave;
-    var fieldArray = ttl.split(":"); //fieldarray is array [uren,minuten]
-    ttl = parseInt(fieldArray[0])*60 + parseInt(fieldArray[1]);
-    return ttl;
-  };
- */
-
-  /*minTot = $scope.minutesTotal();*/

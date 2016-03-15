@@ -72,9 +72,8 @@ ul {
 
 /*timeline*/
 
-#result{
+.result{
     margin: 4em 0;
-
 }
 
 #timeline{
@@ -104,3 +103,4 @@ ul {
     display: inline-block;
 
 }
+
