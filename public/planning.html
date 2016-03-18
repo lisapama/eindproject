@@ -6,6 +6,8 @@
     <script src="angular-animate.min.js"></script>
     <script src='planning.js'></script>
     <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div id="container" ng-controller="PlanCtrl">
@@ -32,20 +34,26 @@
         </form>
     </div>
     <div ng-controller="CalcCtrl">
-        Total time: {{minutesTotal()}} minutes
+        <p>Total time: {{minutesTotal()}} minutes</p>
+        <h3>When do you leave?</h3>
         <form ng-submit="startTime()">
-            <input ng-model="timeToLeave" name="timeToLeave" id="endtime" placeholder="00:00" autocomplete="off"/>
-            <input type=submit class="btnstd" value="calc"/>
-            Start time: {{realStartTime}}
+            <input ng-model="timeToLeave" type="text" name="timeToLeave" id="endtime" placeholder="00:00" autocomplete="off"/>
+            <input type=submit class="btnstd" value="calculate"/>
         </form>
-        <div class="result">
-            <h3>Timeline</h3>
-            <div class="time">{{realStartTime}}</div>
-            <div class="time" id="leave">{{timeToLeave}}</div>
+        <h3>Timeline</h3>
+        <div class="result-container">
+            <div class="time">
+                <p class="timetext">wake up:</p>
+                {{realStartTime}}
+            </div>
             <div id="timeline" ng-repeat="plan in plans">
                 <div class="item">
                    {{plan.task}}
                 </div>
+            </div>
+            <div class="time">
+                <p class="timetext">leave at:</p>
+                {{timeToLeave}}
             </div>
         </div>
     </div>
