@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "engines": { 
         "node": "4.1.1" },
+  "main": "planning-server.js",
   "dependencies": {
     "body-parser": "^1.14.2",
     "express": "^4.13.4",
