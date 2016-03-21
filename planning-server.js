@@ -2,26 +2,23 @@ var express  = require('express');
 var app      = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var path = require('path');
 
-/*mongoose.connect('mongodb://localhost/plan');*/
-app.set("views", path.join(__dirname, 'public'));
+mongoose.connect('mongodb://localhost/plan');
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
-app.get('/planning', function () {
-  console.log("test");
+app.listen(3000, function () {
+  console.log('port 3000: Planning app');
 });
 
-app.listen(process.env.PORT);
-
-var planSchema =  new mongoose.Schema ({
+ var planSchema =  new mongoose.Schema ({
    minutes: { type: Number, default:''},
    task: { type: String, default:''}
  });
 
 var Plan = mongoose.model('Plan', planSchema);
+
 
   app.get('/plans', function (req, res) {
     Plan.find(function (err, plans) {
@@ -48,4 +45,3 @@ var Plan = mongoose.model('Plan', planSchema);
     });
   });
 
-module.exports=app;

@@ -27,33 +27,37 @@
                   <td><input type="checkbox"/></td>
                   <td>{{plan.task}}</td>
                   <td>
-                      <button class="btndel" ng-click="delete(plan._id)">-</button>
+                      <button class="btndel" ng-click="delete(plan._id)">x</button>
                   </td>
               </tr>
           </table>
         </form>
     </div>
     <div ng-controller="CalcCtrl">
-        <p>Total time: {{minutesTotal()}} minutes</p>
-        <h3>When do you leave?</h3>
-        <form ng-submit="startTime()">
-            <input ng-model="timeToLeave" type="text" name="timeToLeave" id="endtime" placeholder="00:00" autocomplete="off"/>
-            <input type=submit class="btnstd" value="calculate"/>
-        </form>
-        <h3>Timeline</h3>
-        <div class="result-container">
-            <div class="time">
-                <p class="timetext">wake up:</p>
-                {{realStartTime}}
-            </div>
-            <div id="timeline" ng-repeat="plan in plans">
-                <div class="item">
-                   {{plan.task}}
+        <div id="calclist">
+            <p>Total time: {{minutesTotal()}} minutes</p>
+            <h3>When do you leave?</h3>
+            <form ng-submit="startTime()">
+                <input ng-model="timeToLeave" type="text" name="timeToLeave" id="endtime" placeholder="00:00" autocomplete="off"/>
+                <input type=submit ng-click="showme=true" class="btnstd" value="calculate"/>
+            </form>
+            <h3>Timeline</h3>
+        </div>
+        <div class="timeline-container" ng-show="showme">
+            <div class="result-container">
+                <div class="time">
+                    <p class="timetext">wake up:</p>
+                    {{realStartTime}}
                 </div>
-            </div>
-            <div class="time">
-                <p class="timetext">leave at:</p>
-                {{timeToLeave}}
+                <div id="timeline" ng-repeat="plan in plans">
+                    <div class="item">
+                       {{plan.task}}
+                    </div>
+                </div>
+                <div class="time">
+                    <p class="timetext">leave at:</p>
+                    {{timeToLeave}}
+                </div>
             </div>
         </div>
     </div>
