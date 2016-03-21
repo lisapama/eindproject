@@ -15,6 +15,10 @@ app.get('/planning', function () {
   console.log("test");
 });
 
+app.listen(process.env.PORT);
+
+module.exports=app;
+
 /*app.listen(3000, function () {
   console.log('port 3000: Planning app');
 });*/
