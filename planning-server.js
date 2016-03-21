@@ -3,16 +3,20 @@ var app      = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://localhost/plan');
+/*mongoose.connect('mongodb://localhost/plan');*/
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.listen(3000, function () {
-  console.log('port 3000: Planning app');
+app.get('/planning', function () {
+  console.log("test");
 });
 
- var planSchema =  new mongoose.Schema ({
+/*app.listen(3000, function () {
+  console.log('port 3000: Planning app');
+});*/
+
+/* var planSchema =  new mongoose.Schema ({
    minutes: { type: Number, default:''},
    task: { type: String, default:''}
  });
@@ -44,4 +48,4 @@ var Plan = mongoose.model('Plan', planSchema);
         res.status(200).end();
     });
   });
-
+*/
