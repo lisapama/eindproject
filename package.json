@@ -1,12 +1,14 @@
 {
-    "name": "planningapp",
-    "version": "0.0.1",
-    "engines": { 
-        "node": "4.1.1" },
+  "name": "planningapp",
+  "version": "0.0.1",
+  "engines": {
+    "node": "4.1.1"
+  },
   "main": "planning-server.js",
   "dependencies": {
     "body-parser": "^1.14.2",
     "express": "^4.13.4",
-    "mongoose": "^4.4.4"
+    "mongoose": "^4.4.4",
+    "path": "^0.12.7"
   }
 }

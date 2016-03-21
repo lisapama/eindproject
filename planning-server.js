@@ -2,11 +2,13 @@ var express  = require('express');
 var app      = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 /*mongoose.connect('mongodb://localhost/plan');*/
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
-app.use(express.static('public'));
+//app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/planning', function () {
   console.log("test");
