@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 /*mongoose.connect('mongodb://localhost/plan');*/
+app.set("views", path.join(__dirname, 'public'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 //app.use(express.static('public'));
