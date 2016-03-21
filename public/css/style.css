@@ -92,6 +92,30 @@ button{
     max-height: 2em;
 }
 
+::-webkit-scrollbar{
+    width:16px;
+    background-color:#cccccc;
+}
+
+
+#activitylist::-webkit-scrollbar-thumb{
+    background-color:#B03C3F;
+    border-radius:10px;
+}
+#activitylist::-webkit-scrollbar-thumb:hover{
+    background-color:#BF4649;
+    border:1px solid #333333;
+}
+#activitylist::-webkit-scrollbar-thumb:active{
+    background-color:#A6393D;
+    border:1px solid #333333;
+}
+
+.scroll {
+    overflow: auto;
+    max-height: 15em;
+}
+
 th, td {
     border-bottom: 1px solid #ddd;
     padding: 0.5em;
