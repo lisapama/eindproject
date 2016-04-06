@@ -36,34 +36,7 @@ planner.controller("PlanCtrl", function($scope, $http) {
 });
 
 planner.controller("CalcCtrl", function ($scope) {
-
-    function timeToMinutes (ptime) {
-        var parts = ptime.split(":");
-        if (parts.length == 1) {
-            return parts[0] * 60;
-        }
-        return parts[0] * 60 + parts[1];
-    }
-
-    function minutesToTime (minutes) {
-        var displayMinutes = minutes%60;
-        var displayHours99 = (minutes - displayMinutes)/60;
-        var displayHoursString = String(displayHours99);
-        var displayHours = displayHoursString.substr(0,2);
-        displayHours = parseInt(displayHours);
-
-        if (displayMinutes < 10) {
-            return displayHours + ":0" + displayMinutes;
-        }
-        else {
-            return displayHours + ":" + displayMinutes;
-        }
-    }
-
     $scope.startTime = function () {
-        var taskMinutes = $scope.minutesTotal();
-        var timeToLeaveMinutes = timeToMinutes($scope.timeToLeave);
-        var startTimeMinutes = timeToLeaveMinutes - taskMinutes;
-        $scope.realStartTime = minutesToTime(startTimeMinutes);
+        $scope.realStartTime = moment($scope.timeToLeave, 'HH:mm').subtract($scope.minutesTotal(), 'minutes').format('H:mm');
     }
 });
