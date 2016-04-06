@@ -89,7 +89,7 @@ button{
 
 .table {
     border: 0px solid #ddd;
-    max-height: 2em;
+    max-height: 1em;
 }
 
 ::-webkit-scrollbar{

@@ -22,9 +22,7 @@
       <h3>Activities</h3>
         <form class="scroll" id="activitylist">
           <table class="table">
-              <!--add functional checkboxes with if-->
               <tr ng-repeat="plan in plans">
-                  <td><input type="checkbox"/></td>
                   <td>{{plan.task}}</td>
                   <td>
                       <button class="btndel" ng-click="delete(plan._id)">x</button>
