@@ -1,4 +1,4 @@
-var planner = angular.module('plan', ['ngAnimate']);
+var planner = angular.module('plan');
 
 planner.controller("PlanCtrl", function($scope, $http) {
 
